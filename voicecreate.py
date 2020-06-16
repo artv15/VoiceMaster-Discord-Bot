@@ -8,12 +8,13 @@ from random import randint
 import traceback
 import sqlite3
 import sys
+import os
 
 client = discord.Client()
 
 bot = commands.Bot(command_prefix=".")
 bot.remove_command("help")
-DISCORD_TOKEN = BOT_TOKEN
+DISCORD_TOKEN = os.environ.get('BOT_TOKEN') #Токен бота с heroku
 
 initial_extensions = ['cogs.voice']
 
