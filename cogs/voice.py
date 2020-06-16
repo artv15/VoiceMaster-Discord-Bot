@@ -36,7 +36,7 @@ class voice(commands.Cog):
                         pass
                     else:
                         await member.send("Молодец, что пытаешься снять бота. Благодарю от всей души!")
-                        await asyncio.sleep(0.1)
+                        await asyncio.sleep(1)
                     c.execute("SELECT voiceCategoryID FROM guild WHERE guildID = ?", (guildID,))
                     voice=c.fetchone()
                     c.execute("SELECT channelName, channelLimit FROM userSettings WHERE userID = ?", (member.id,))
